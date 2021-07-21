@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html ng-app="routingFaceRecognition" ng-controller="main" id="main" style="scrollbar-width:none;">
+  <head >
+    <meta charset="utf-8">
+      <title>Face Recognition</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+      <link rel="stylesheet" href="{% static 'css/main.css' %}" charset="utf-8">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <!-- <link type="text/css" rel="stylesheet" href="dist/angular-flash.min.css" /> -->
+
+    <meta name="viewport" content="initial-scale=1">
+  </head>
+  <style>
+  body{
+    /* background: #E5E5E5; */
+    background-image: url(https://saga.taitech.in/static/images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  </style>
+  <body >
+    <div class=""  ng-controller="main" >
+<h1 style="text-align:center;font-family: 'timesnewroman';"> Face Recognition</h1>
+<h2 style="text-align:center;color:#003366;line-height: 1.6;font-family: 'Goblin One'">AI based secure Face ID access system</h2>
+<h3 style="text-align:center;line-height: 1.6;font-family: 'Goblin One'">I agree to share my data for face Recognition</h3>
+</div>
+
+
+    <div class="">
+      <div ui-view >
+      </div>
+
+    </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+      <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <!-- <script src="dist/angular-flash.min.js"></script> -->
+      <script src="{% static 'js/main.js' %}"></script>
+      <script src="{% static 'js/angular-flash.js' %}"></script>
+       <!-- <script src="https://rawgithub.com/gtramontina/angular-flash/master/angular-flash.js"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js">  </script>      <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js" integrity="sha512-dQIiHSl2hr3NWKKLycPndtpbh5iaHLo6MwrXm7F0FM5e+kL2U16oE9uIwPHUl6fQBeCthiEuV/rzP3MiAB8Vfw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.23/angular-datepicker.min.js" integrity="sha512-b+yZxP3ttYrh8bcJJFFHopmaZ9+PmOdmUL01PKuLo3MDMbwM+A2RAZY6fVeA39OdUaR6UgX0JO3BFhlvv1gzmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js" integrity="sha512-2xXe2z/uA+2SyT/sTSt9Uq4jDKsT0lV4evd3eoE/oxKih8DSAsOF6LUb+ncafMJPAimWAXdu9W+yMXGrCVOzQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.23/angular-datepicker.css" integrity="sha512-+naChGyL5WF0NADnLIbo2E7W9vW9qdz+H2YGpAQWwdvaiWXdeKuWgGMkofZO6Maly902smOa+6laE6Tm3z8LXw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.css" integrity="sha512-E4kKreeYBpruCG4YNe4A/jIj3ZoPdpWhWgj9qwrr19ui84pU5gvNafQZKyghqpFIHHE4ELK7L9bqAv7wfIXULQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </body>
+</html>

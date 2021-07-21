@@ -1,0 +1,108 @@
+<style media="screen">
+
+
+  .form-control{
+    border-radius:10px;
+  }
+  .button1 {
+  background-color: white;
+  color: black;
+  border: 4px solid #003366;
+  margin-top:35%;
+
+}
+
+.button1:hover {
+  background-color: #003366;
+  color: white;
+}
+#vid2{
+ width: 340px;
+ height: 280px;
+ /* border: 1px solid black; */
+}
+#vid{
+ width: 360px;
+ height: 280px;
+ /* border: 1px solid black; */
+}
+</style>
+
+<div class="container-fluid " style="margin-top:5%;">
+
+    <div class="row text-center">
+    <div class="col-md-offset-5 col-md-2">
+    <button style="width:120px;height:45px;border-radius:20px;" class="button1"ng-click="OpenCam()">I Agree</button>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-3 col-md-2">
+        <h3 style="text-align:center;color:#003366;float:right;">Live Strem</h3>
+    <!-- <div id="my_camera"></div> -->
+    <video id="vid"></video>
+  <!-- <input type=button style="width:120px;height:45px;border-radius:20px;float:right" class="button1" value="Capture" ng-click="take_snapshot()"> -->
+  <button id="btnStart" style="width:120px;height:45px;border-radius:20px;float:right" class="button1">Sart Capturing</button>
+  </div>
+  <div class="col-md-offset-1 col-md-2">
+    <h3 style="text-align:center;color:#003366;float:right;">Capture Image</h3>
+    <!-- <div id="results" ></div> -->
+    <video id="vid2" controls ></video>
+    <button id="btnStop" style="width:120px;height:45px;border-radius:20px;float:right" class="button1">Stop Capturing</button>
+
+
+  </div>
+</div>
+
+
+  <div class="row"style="margin-top:5%;">
+    <div class="col-md-offset-4 col-md-4">
+    <div class="form-group">
+      <label >Enter Employee ID:</label>
+      <select class="form-control"ng-model="form.employee" ng-options="item.employee_id for item in empData ">
+              <option value="" selected>Employee ID</option>
+              </select>    </div>
+    </div>
+    </div>
+    <!-- <div class="row">
+      <div class="col-md-offset-4 col-md-2">
+      <div class="form-group">
+        <label >Marked Time:</label>
+        <uib-timepicker ng-model="form.marked_time" hour-step="1" minute-step="1" show-meridian="true"></uib-timepicker>
+      </div>
+      </div> -->
+      <!-- </div> -->
+      <!-- <div class="row"> -->
+        <!-- <div class=" col-md-2">
+          <div class="form-group">
+            <label>Employee Image</label><br><br>
+            <input type="file"  file-model="form.imagePath" accept="image/*" >
+          </div>
+        </div> -->
+      <!-- </div> -->
+      <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+        <div class="form-group">
+          <label >Messages:</label>
+          <textarea class="form-control" rows=3 cols=50 placeholder="Messages ..."  ng-model="form.empMessage" ></textarea>
+
+        </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-md-offset-4 col-md-4">
+          <div class="form-group">
+            <label >Address:</label>
+            <textarea class="form-control" rows=3 cols=50 placeholder="Address ..."  ng-model="form.empAddress" ></textarea>
+
+          </div>
+          </div>
+          </div>
+
+
+
+  <div class="row text-center">
+  <div class="col-md-offset-5 col-md-2">
+  <button style="width:120px;height:45px;border-radius:20px;" class="button1"ng-click="saveEmpAttendance()">Submit</button>
+  </div>
+  </div>
+</div>
