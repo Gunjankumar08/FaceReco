@@ -96,7 +96,8 @@ class EmployeeAttendanceViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.AllowAny,)
     serializer_class = EmployeeAttendanceSerializer
     queryset = EmployeeAttendance.objects.all()
-
+    filter_backends = [DjangoFilterBackend]
+    filter_fields = ['employee','empMessage']
 
 def Employee_Attendance(request):
 

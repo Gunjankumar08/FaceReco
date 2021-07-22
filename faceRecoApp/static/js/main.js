@@ -23,6 +23,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
                             templateUrl: "/static/ngTemplates/DeleteTraining.html",
                             controller: "DeleteTraining"
                         })
+                        .state('EmployeeAttendanceResult', {
+                            url: "/EmployeeAttendanceResult",
+                            templateUrl: "/static/ngTemplates/EmployeeAttendanceResult.html",
+                            controller: "EmployeeAttendanceResult"
+                        })
 
             }])
 var emptyFile = new File([""], "");
@@ -32,6 +37,9 @@ app.controller("main", function($scope, $state, $stateParams, $http, $rootScope 
   }
   $scope.DeleteTraining = function(){
       $state.go('DeleteTraining')
+  }
+  $scope.EmployeeAttendanceResult = function(){
+      $state.go('EmployeeAttendanceResult')
   }
 })
 
@@ -424,4 +432,32 @@ $scope.form={
           $scope.resetForm();
     })
     }
+})
+app.controller("EmployeeAttendanceResult", function($scope, Flash,$state, $stateParams, $http, $rootScope ,$filter) {
+  $scope.form={
+      employee_id:'',
+      user_email:'',
+    }
+
+
+    $scope.SearchingResult = function() {
+
+    $http({
+      method:'GET',
+      // url:'/api/homepage/paymentAdviceCreate/?date='+$scope.form.fromDate.toJSON().split('T')[0]
+      url:'/faceRecognition/employeeAttendance/?employee__employee_id='+$scope.form.employee_id+'&employee__user_email='+$scope.form.user_email
+    }).then(function(response){
+      $scope.AttendanceResult = response.data
+      if(response.data.length == 0){
+        alert("Data Not Available")
+      }
+
+      // $scope.enqdata = response.data.results
+
+      console.log(response.data.length,"sdfsdfsdfsdfffffffffff");
+      $scope.count = response.data.count
+
+    })
+  }
+
 })
