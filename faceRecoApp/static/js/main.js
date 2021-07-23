@@ -434,7 +434,7 @@ $scope.form={
       }).
       then(function(response) {
         // Flash.create('success', 'Enquiry created successfully!')
-        $scope.msg = 'Employee Data Deleted  Successfully!'
+        // $scope.msg = 'Employee Data Deleted  Successfully!'
 
         // $state.go('')
           $scope.resetForm();
