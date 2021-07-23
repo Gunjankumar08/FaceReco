@@ -194,6 +194,8 @@ $scope.form={
     }
     // console.log($scope.form.imagePath,"fdfsdf")
       $scope.saveEmp = function() {
+        $scope.msg = ''
+          $scope.errmsg = ''
           var fd = new FormData()
           fd.append('employee_id', $scope.form.employee_id);
           fd.append('user_email', $scope.form.user_email);
@@ -224,6 +226,7 @@ $scope.form={
         }).
         then(function(response) {
           Flash.create('success', 'Employee Singup  successfully!')
+          $scope.msg = 'Employee Singup  Successfully!'
           // $state.go('EmployeeAttendance')
             $scope.resetForm();
       })
@@ -361,7 +364,7 @@ $scope.form={
       }
     }
       $scope.saveEmpAttendance = function() {
-
+          $scope.msg = ''
           var fd = new FormData()
           // if ($scope.form.marked_time != '' ) {
           //   fd.append('marked_time' , $filter('date')($scope.form.marked_time , "yyyy-MM-dd'T'HH:mm:ss") );
@@ -389,6 +392,8 @@ $scope.form={
         }).
         then(function(response) {
           // Flash.create('success', 'Enquiry created successfully!')
+          $scope.msg = ' Attendance Added  Successfully!'
+
           // $state.go('')
             $scope.resetForm();
       })
@@ -403,6 +408,7 @@ $scope.form={
       }
     }
     $scope.DeleteEmp = function() {
+        $scope.msg = ''
 
         var fd = new FormData()
 
@@ -428,6 +434,8 @@ $scope.form={
       }).
       then(function(response) {
         // Flash.create('success', 'Enquiry created successfully!')
+        $scope.msg = 'Employee Data Deleted  Successfully!'
+
         // $state.go('')
           $scope.resetForm();
     })

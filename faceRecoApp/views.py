@@ -111,8 +111,9 @@ def Employee_Attendance(request):
         empAddress = request.POST.get('empAddress')
         # user_email = request.POST.get('user_email')
         # group_name = request.POST.get('group_name')
-        modify_name = empMessage.replace(" ", "_")
         employee_id=EmployeeSingup.objects.get(id=request.POST['employee'])
+        modify_name = employee_id.first_name.replace(" ", "_")
+
         print(employee_id.first_name,"idddd")
 
 
@@ -123,7 +124,7 @@ def Employee_Attendance(request):
 
         imgdata = base64.b64decode(split_base_url_data)
 
-        filename = 'H:\Ekfrazo\FaceReco\static\images/'+empMessage+'.mp4'
+        filename = 'H:\Ekfrazo\FaceReco\static\images/'+employee_id.first_name+'.mp4'
         fname = 'https://saga.taitech.in/static/uploaded_images/'+modify_name+'.mp4'
         with open(filename, 'wb') as f:
             f.write(imgdata)
